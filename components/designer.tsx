@@ -69,10 +69,8 @@ const Designer = () => {
 
       // Second scenario
       if (droppingSidebarBtnOverDesignerElement) {
-        const type = active.data?.current?.type;
-        const newElement = FormElements[type as ElementsType].construct(
-          idGenerator()
-        );
+        const type = active.data?.current?.type as ElementsType;
+        const newElement = FormElements[type].construct(idGenerator());
 
         const overId = over.data?.current?.elementId;
 

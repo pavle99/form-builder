@@ -152,7 +152,7 @@ function FormComponent({
   );
 }
 
-type propertiesFormSchemaType = z.infer<typeof propertiesSchema>;
+type PropertiesFormSchemaType = z.infer<typeof propertiesSchema>;
 
 function PropertiesComponent({
   elementInstance,
@@ -163,7 +163,7 @@ function PropertiesComponent({
 
   const { updateElement } = useDesigner();
 
-  const form = useForm<propertiesFormSchemaType>({
+  const form = useForm<PropertiesFormSchemaType>({
     resolver: zodResolver(propertiesSchema),
     mode: "onBlur",
     defaultValues: {
@@ -178,7 +178,7 @@ function PropertiesComponent({
     form.reset(element.extraAttributes);
   }, [element, form]);
 
-  function applyChanges(values: propertiesFormSchemaType) {
+  function applyChanges(values: PropertiesFormSchemaType) {
     const { label, helperText, placeHolder, required } = values;
     updateElement(element.id, {
       ...element,
