@@ -47,7 +47,7 @@ function FormSubmitComponent({
     formErrors.current = {};
     const validForm = validateForm();
     if (!validForm) {
-      setRenderKey(new Date().getTime());
+      setRenderKey(new Date().getTime()); // force re-render
       toast({
         title: "Error",
         description: "please check the form for errors",
