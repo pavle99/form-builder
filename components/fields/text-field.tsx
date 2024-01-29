@@ -271,8 +271,7 @@ function PropertiesComponent({
               <div className="space-y-0.5">
                 <FormLabel>Required</FormLabel>
                 <FormDescription>
-                  The helper text of the field. <br />
-                  It will be displayed below the field.
+                  Whether the field is required or not.
                 </FormDescription>
               </div>
               <FormControl>
