@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Form Builder
 
-## Getting Started
+<img width="1293" alt="Screenshot 1" src="https://github.com/pavle99/form-builder/assets/73827472/f6b46c16-cc09-4dd9-84e2-2b582ac0a7e9">
+<img width="1294" alt="Screenshot 2" src="https://github.com/pavle99/form-builder/assets/73827472/4a2cf5a5-9810-45a0-b6c0-e1c67d7ebabc">
+<img width="1289" alt="Screenshot 3" src="https://github.com/pavle99/form-builder/assets/73827472/9067c607-8e8b-4809-8ef1-e230bcf67075">
 
-First, run the development server:
+## Table of Contents
+
+- [Introduction](#prerequisites)
+- [Link to website demo](#installation)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the application](#running-the-application)
+
+## Introduction
+
+A responsive fullstack form builder application built using Next.js for frontend and backend, Prisma ORM and Clerk for auth. The application allows you to create and customize forms with a wide variety of fields, both editable and non-editable, as well as publish them and preview their statistics.
+
+## Link to website demo
+
+[FormBuilder](https://form-builder-pavle99.vercel.app/)
+
+## Tech Stack
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ShadCN/ui](https://ui.shadcn.com/)
+- [Prisma](https://www.prisma.io/)
+- [Clerk](https://www.clerk.dev/)
+- [DnD-Kit](https://dndkit.com/)
+
+## Prerequisites
+
+Install the following prerequisites:
+
+1. [Node.js 18.17.0 or higher](https://nodejs.org/en/)
+2. [Visual Studio Code](https://code.visualstudio.com/download)
+
+## Installation
+
+### 1. Install dependencies
+
+From the **root** directory run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+``` 
+
+### 2. Create and populate the `.env` file like this:
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
+
+POSTGRES_PRISMA_URL=
+POSTGRES_URL_NON_POOLING=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Run the Prisma migration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpx prisma migrate dev --name init
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Running the application
 
-## Learn More
+To run the application, run the following command:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm run dev
+```
